@@ -1,0 +1,18 @@
+html
+    head
+        title Mi primera página con express y jade
+    body
+        // Este es un comentario
+        - var arreglo = [1,2,3,4,5,6];
+        
+        - for (var i=arreglo.length-1;i>=0;i--)
+            p. 
+                Hola #{arreglo[i]} haz click #[a(href="localhost:8080") este link] va
+        
+        - if (true)
+            p.  
+                HAo
+
+        each item in arreglo
+            p.
+                #[h1 item]
