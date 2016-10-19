@@ -1,19 +1,7 @@
-
 var express 	= require("express");
 var bodyParser 	= require('body-parser');
-var mongoose	= require("mongoose");
-
-mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/fotos");
-
-var userSchemaJSON = {
-	email:String,
-	password:String
-};
-
+var User 		= require("./models/user").User;
 var app 		= express();
-var user_schema = new mongoose.Schema(userSchemaJSON);
-var User 		= mongoose.model("User", user_schema);
 
 
 app.use("/static",express.static('./public'));
