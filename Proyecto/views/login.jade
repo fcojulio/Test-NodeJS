@@ -1,18 +1,12 @@
 extends ./layout.jade
 block contenido
 	h1 Login Proyecto Index
-	form(action="/users", method="POST")
+	form(action="/sessions", method="POST")
 		div
-			label(for="email") Email
-			input(type="text", name="email", placeholder="Email", id="email" class="form-control")
-		div
-			label(for="Username") Username
-			input(type="text", name="username", placeholder="Nombre de usuario", id="username" class="form-control")
+			label(for="emal") Email
+			input(type="text", name="email", placeholder="Email de usuario", id="email" class="form-control")
 		div
 			label(for="pass") Pass
 			input(type="password", name="pass", placeholder="Pass", id="pass" class="form-control")
-		div
-			label(for="password_confirmation") Pass
-			input(type="password", name="password_confirmation", placeholder="Pass", id="password_confirmation" class="form-control")
 		div
 			input(type="submit" value="Iniciar sesión" class="form-cotntrol" class="btn btn-inf")

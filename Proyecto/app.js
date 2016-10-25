@@ -24,6 +24,14 @@ app.get("/login", function(req,res){
 	
 });
 
+app.get("/signup", function(req,res){	
+	User.find(function(err,doc){
+		console.log(doc);
+		res.render("signup");
+	});
+	
+});
+
 app.post("/users", function(req, res){
 	//console.log("E-mail: " + req.body.email);
 	//console.log("Contraseña: " + req.body.pass);
@@ -42,6 +50,15 @@ app.post("/users", function(req, res){
 		res.send("No pudimos guardar la informacion");
 	});
 	
+
+});
+
+app.post("/sessions", function(req,res){
+
+	User.findOne({email:req.body.email,password:req.body.pass}, function(err, docs){
+		console.log(docs);
+		res.send("Hola mundo");
+	});
 
 });
 
