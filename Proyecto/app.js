@@ -35,11 +35,11 @@ app.post("/users", function(req, res){
 							username: req.body.username
 						});
 	
-	user.save(function(err, user, numero){
-		if ( err ){
-			console.log(String(err));
-		}
-		res.send("Guardamos tus datos");
+	user.save().then(function(us){
+		res.send("Guardamos tu usuario");
+	},function(err){
+		console.log(String(err));
+		res.send("No pudimos guardar la informacion");
 	});
 	
 
