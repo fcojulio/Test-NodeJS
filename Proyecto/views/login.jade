@@ -1,12 +1,16 @@
 extends ./layout.jade
 block contenido
-	h1 Login Proyecto Index
-	form(action="/sessions", method="POST")
-		div
-			label(for="emal") Email
-			input(type="text", name="email", placeholder="Email de usuario", id="email" class="form-control")
-		div
-			label(for="pass") Pass
-			input(type="password", name="pass", placeholder="Pass", id="pass" class="form-control")
-		div
-			input(type="submit" value="Iniciar sesión" class="form-cotntrol" class="btn btn-inf")
+	div(class="col-md-4 remove-float center-block big-top-space")
+		h1 Login Proyecto Index
+		form(action="/sessions", method="POST")
+			div
+				label(for="emal") Email
+				input(type="text", name="email", placeholder="Email de usuario", id="email" class="form-control")
+			div
+				label(for="pass") Pass
+				input(type="password", name="pass", placeholder="Pass", id="pass" class="form-control")
+			div(class="row top-space")
+				div(class="col-xs-12 col-sm-6")
+					input(type="submit" value="Iniciar sesión" class="form-cotntrol" class="btn btn-inf")
+				div(class="col-xs-12 col-sm-6 text-right")
+					a(href="signup") No tengo cuenta

@@ -1,3 +1,19 @@
 body { 
-		background-color: red;
+		background-color: white;
 	}
+
+.left-space {
+	margin-left: 1em;
+}
+
+.remove-float {
+	float: none;
+}
+
+.big-top-space {
+	margin-top: 100px;
+}
+
+.top-space {
+	margin-top: 1.5em;
+}
