@@ -2,6 +2,7 @@ var express 	= require("express");
 var bodyParser 	= require('body-parser');
 var User 		= require("./models/user").User;
 var session 	= require("express-session");
+var routes_app	= require("./routes_app");
 
 var app 		= express();
 
@@ -11,6 +12,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
+// /app -> usuario logeado
+// / 	-> usuario no logeado
 
 app.use(session({
 	secret: "AASD=efiaf09af9003209q3r9wefpasfAFS",
@@ -74,5 +78,7 @@ app.post("/sessions", function(req,res){
 	});
 
 });
+
+app.use("/app", routes_app);
 
 app.listen(8080);
